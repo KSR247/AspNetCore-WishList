@@ -21,12 +21,13 @@ namespace WishList.Controllers
             return View("Index", model);
         }
 
-        public IActionResult create()
+        [HttpGet]
+        public IActionResult Create()
         {
             return View("Create");
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult Create(Models.Item item)
         {
             _context.Items.Add(item);
